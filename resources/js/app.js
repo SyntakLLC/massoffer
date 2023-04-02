@@ -1,12 +1,16 @@
 import './bootstrap';
 import '../css/app.css';
 
+// form css
+import '../css/form.css';
+import '../css/form-theme.css';
+
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 
-const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Mass Offer';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

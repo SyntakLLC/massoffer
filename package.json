@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@codinglabs/laravel-asset": "^1.0.3",
+        "@ditdot-dev/vue-flow-form": "^2.3.1",
         "@headlessui/vue": "^1.7.12",
         "@heroicons/vue": "^2.0.17",
         "@prettier/plugin-php": "^0.19.4",
