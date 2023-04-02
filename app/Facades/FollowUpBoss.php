@@ -22,6 +22,9 @@ class FollowUpBoss
             'emails' => [
                 $request->get('email')
             ],
+            'phones' => [
+                $request->get('phone')
+            ],
             'background' =>
                 'Looking to sell: ' . $request->get('propertyType') . '. ' .
                 'Wants to sell in timeframe: ' . $request->get('timeline') . '. ' .

@@ -24,6 +24,7 @@ class StoreLeadRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'], //
             'email' => ['required', 'string', 'max:255'], //
+            'phone' => ['required', 'string', 'max:255'], //
             'propertyType' => ['required', 'string', 'max:255'],
             'estimatedWorth' => ['required', 'string', 'max:255'], //
             'timeline' => ['required', 'string', 'max:255'],

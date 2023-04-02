@@ -40,6 +40,7 @@ export default {
             'welcome',
             'name',
             'email',
+            'phone',
             'propertyType',
             'estimatedWorth',
             'timeline',
@@ -101,6 +102,11 @@ export default {
                     required: true,
                     title: 'What is your email?',
                     type: QuestionType.Email,
+                }),
+                new QuestionModel({
+                    required: true,
+                    title: 'What is your phone number?',
+                    type: QuestionType.Phone,
                 }),
                 new QuestionModel({
                     required: true,
