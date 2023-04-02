@@ -50,6 +50,23 @@ export default {
         return { questionKeys };
     },
 
+    mounted() {
+        // FlowForm defaults to making the begin button say "Continue". This changes
+        // that.
+        const observer = new MutationObserver((mutations, obs) => {
+            const buttons = document.getElementsByClassName('o-btn-action');
+            if (!buttons.length) return;
+            if (buttons[0].innerText === 'Continue') {
+                buttons[0].innerText = 'Get my Offer!';
+            }
+            obs.disconnect();
+        });
+        observer.observe(document, {
+            childList: true,
+            subtree: true
+        });
+    },
+
     methods: {
         submit(questions) {
             const answers = {};

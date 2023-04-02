@@ -354,7 +354,7 @@ header.vff-header svg.f-logo {
     z-index: 1;
     line-height: 1.2;
     font-weight: 900;
-    text-transform: lowercase;
+    /*text-transform: lowercase;*/
 }
 
 .vff .o-btn-action span {
