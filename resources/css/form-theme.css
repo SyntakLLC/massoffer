@@ -25,7 +25,7 @@
 .vff kbd,
 .vff-header,
 .vff-footer {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Figtree', sans-serif;
 }
 
 body {
@@ -45,6 +45,7 @@ body {
 
 header.vff-header {
     background-color: #000000;
+    /*background-color: #f5f7f8;*/
 }
 
 header.vff-header svg.f-logo {
@@ -191,7 +192,8 @@ header.vff-header svg.f-logo {
 /* buttons */
 .vff .o-btn-action {
     color: var(--vff-bg-color);
-    background-color: var(--vff-main-text-color);
+    background-color: #42de59;
+    /*background-color: var(--vff-main-accent-color);*/
 }
 
 .vff .o-btn-action:hover,
@@ -258,7 +260,8 @@ header.vff-header svg.f-logo {
   dark mode styles
 */
 
-@media (prefers-color-scheme: dark) {
+/* DARK MODE COMMENT */
+/*@media (prefers-color-scheme: dark) {*/
     :root {
         --vff-bg-color: #313640;
         --vff-main-text-color: #fff;
@@ -346,4 +349,4 @@ header.vff-header svg.f-logo {
     .vff .f-matrix-wrap::-webkit-scrollbar-thumb {
         background-color: var(--vff-main-accent-color);
     }
-}
+/*}*/

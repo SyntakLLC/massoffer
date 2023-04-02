@@ -1,24 +1,26 @@
 <template>
     <Head><title>Offer for your home</title></Head>
 
-    <header class="vff-header">
-        <div class="f-container">
+    <header class="bg-[#0963ac] py-4 px-6">
             <img
-                class="h-12 w-auto rounded-lg"
-                src="https://i.imgur.com/xkyEOO5.png"
+                class="h-12 w-auto rounded-lg mx-auto"
+                src="https://i.imgur.com/maCKpBh.png"
                 alt="Mass Offer Logo" />
-        </div>
     </header>
 
 <!--    <img src="https://images.unsplash.com/photo-1601082100496-2b63c50ad41c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTY4fHxyZWFsJTIwZXN0YXRlJTIwaW50ZXJpb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"-->
-<!--         alt="Real estate interior decorative photo"-->
-<!--         class="fixed w-full h-full object-cover blur-sm" />-->
+    <img src="https://i.imgur.com/iViRi3z.png"
+         alt="Real estate interior decorative photo"
+         class="fixed w-screen h-screen object-cover" />
+<!--    <div class="fixed w-screen h-screen bg-black opacity-50"/>-->
 
 
     <flow-form
         @submit="submit"
         :questions="questions"
-        :language="language" />
+        :language="language">
+<!--        <template #-->
+    </flow-form>
 </template>
 
 <script>
@@ -69,8 +71,8 @@ export default {
             }),
             questions: [
                 new QuestionModel({
-                    title: 'Get an offer for your home.',
-                    content: 'Answer a few short questions and we\'ll be in touch!',
+                    title: 'Get an instant offer on your home in 60 seconds!',
+                    content: 'We just need a few details in order to accurately generate your instant offer:',
                     type: QuestionType.SectionBreak,
                 }),
                 new QuestionModel({
