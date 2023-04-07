@@ -14,6 +14,7 @@
 
 
     <flow-form
+        @change="partiallySubmit"
         class="z-50"
         @submit="submit"
         :questions="questions"
@@ -111,12 +112,35 @@ export default {
             })
 
             this.$inertia.post(route('fub'), answers);
+        },
+        partiallySubmit(event) {
+            this.partialAnswers.push(event.target._value)
+
+            if (this.partialAnswers.length === 3) {
+                const data = {
+                    'name': this.partialAnswers[0],
+                    'email': this.partialAnswers[1],
+                    'phone': this.partialAnswers[2],
+                }
+                this.$inertia.post(route('fub'), data);
+            }
+        }
+    },
+
+    watch: {
+        questions(oldVal, newVal) {
+            console.log('here...')
+            if (!!newVal[3].answer) {
+                console.log('yay')
+                // this.submit(newVal);
+            }
         }
     },
 
     data() {
         return {
             isOnWelcome: true,
+            partialAnswers: [],
             language: new LanguageModel({
                 // Your language definitions here (optional).
                 // You can leave out this prop if you want to use the default definitions.
@@ -140,6 +164,7 @@ export default {
                 new QuestionModel({
                     required: true,
                     title: 'What is your phone number?',
+                    subtitle: 'This is where we\'ll text you your instant offer.',
                     type: QuestionType.Phone,
                 }),
                 new QuestionModel({
