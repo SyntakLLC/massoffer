@@ -81,9 +81,17 @@ export default {
             if (!buttons.length) return;
             if (buttons[0].innerText === 'Continue') {
                 buttons[0].innerText = 'Get my Offer!';
+
+                // the following ensures we hide the logos after the welcome
+                // page.
                 buttons[0].onclick = () => {
                     this.isOnWelcome = false;
                 };
+                document.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.isOnWelcome = false;
+                    }
+                });
             }
             obs.disconnect();
         });
@@ -135,7 +143,6 @@ export default {
                     type: QuestionType.Phone,
                 }),
                 new QuestionModel({
-                    required: true,
                     title: 'What type of property are you selling?',
                     type: QuestionType.MultipleChoice,
                     options: [
@@ -160,7 +167,6 @@ export default {
                     ]
                 }),
                 new QuestionModel({
-                    required: true,
                     title: 'How much do you think it is worth?',
                     type: QuestionType.MultipleChoice,
                     options: [
@@ -185,7 +191,6 @@ export default {
                     ]
                 }),
                 new QuestionModel({
-                    required: true,
                     title: 'How soon are you looking to sell?',
                     type: QuestionType.MultipleChoice,
                     options: [
@@ -210,7 +215,6 @@ export default {
                     ]
                 }),
                 new QuestionModel({
-                    required: true,
                     title: 'How many bedrooms are there?',
                     type: QuestionType.MultipleChoice,
                     options: [
@@ -235,7 +239,6 @@ export default {
                     ]
                 }),
                 new QuestionModel({
-                    required: true,
                     title: 'How many bathrooms are there?',
                     type: QuestionType.MultipleChoice,
                     options: [
@@ -260,7 +263,6 @@ export default {
                     ]
                 }),
                 new QuestionModel({
-                    required: true,
                     title: 'Would you like to receive a no-obligation offer for your house?',
                     type: QuestionType.MultipleChoice,
                     options: [

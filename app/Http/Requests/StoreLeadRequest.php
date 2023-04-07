@@ -25,12 +25,12 @@ class StoreLeadRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'], //
             'email' => ['required', 'string', 'max:255'], //
             'phone' => ['required', 'string', 'max:255'], //
-            'propertyType' => ['required', 'string', 'max:255'],
-            'estimatedWorth' => ['required', 'string', 'max:255'], //
-            'timeline' => ['required', 'string', 'max:255'],
-            'bedroomCount' => ['required', 'string', 'max:255'],
-            'bathroomCount' => ['required', 'string', 'max:255'],
-            'shouldReceiveOffer' => ['required', 'string', 'max:255'],
+            'propertyType' => ['string', 'max:255'],
+            'estimatedWorth' => ['string', 'max:255'], //
+            'timeline' => ['string', 'max:255'],
+            'bedroomCount' => ['string', 'max:255'],
+            'bathroomCount' => ['string', 'max:255'],
+            'shouldReceiveOffer' => ['string', 'max:255'],
         ];
     }
 }
