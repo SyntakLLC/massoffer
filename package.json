@@ -23,6 +23,7 @@
         "@headlessui/vue": "^1.7.12",
         "@heroicons/vue": "^2.0.17",
         "@prettier/plugin-php": "^0.19.4",
-        "prettier": "^2.8.7"
+        "prettier": "^2.8.7",
+        "vue-marquee-text-component": "^2.0.1"
     }
 }

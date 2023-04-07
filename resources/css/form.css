@@ -1009,6 +1009,7 @@ header.vff-header svg.f-logo {
     width: 100%;
     font-weight: 300;
     line-height: 1.2;
+    backdrop-filter: blur(20px);
 }
 
 .vff-footer .footer-inner-wrap {

@@ -8,23 +8,38 @@
                 alt="Mass Offer Logo" />
     </header>
 
-<!--    <img src="https://images.unsplash.com/photo-1601082100496-2b63c50ad41c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTY4fHxyZWFsJTIwZXN0YXRlJTIwaW50ZXJpb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"-->
     <img src="https://i.imgur.com/iViRi3z.png"
          alt="Real estate interior decorative photo"
-         class="fixed w-screen h-screen object-cover" />
-<!--    <div class="fixed w-screen h-screen bg-black opacity-50"/>-->
+         class="absolute w-screen h-screen object-cover z-0" />
 
 
     <flow-form
+        class="z-50"
         @submit="submit"
         :questions="questions"
         :language="language">
-<!--        <template #-->
     </flow-form>
+
+    <div v-if="isOnWelcome" class="w-screen h-20 absolute bottom-[1/5] bg-[#ffffff70] z-0">
+        <MarqueeText class="relative w-full h-full" :duration="30">
+            <div class="h-20 flex justify-center space-x-3">
+                <img class="h-full pb-3"
+                     src="https://i.imgur.com/apJg1jx.png"
+                     alt="Logos"/>
+            </div>
+        </MarqueeText>
+
+        <div class="flex justify-center mx-auto">
+            <img class="pt-6 h-20" src="https://i.imgur.com/M5C8Q5R.png" alt="Logos"/>
+            <img class="pt-6 h-20" src="https://i.imgur.com/UVlO2C5.png" alt="Logos"/>
+        </div>
+    </div>
+
 </template>
 
 <script>
 import { Head } from '@inertiajs/vue3';
+import MarqueeText from 'vue-marquee-text-component'
 import { FlowForm, QuestionModel, QuestionType, ChoiceOption, LanguageModel } from '@ditdot-dev/vue-flow-form'
 
 export default {
@@ -33,6 +48,7 @@ export default {
     components: {
         Head,
         FlowForm,
+        MarqueeText,
     },
 
     setup() {
@@ -48,7 +64,13 @@ export default {
             'bathroomCount',
             'shouldReceiveOffer',
         ];
-        return { questionKeys };
+
+        const logos = [
+            { alt: "Logos", src: "https://i.imgur.com/M5C8Q5R.png" },
+            { alt: "Logos", src: "https://i.imgur.com/UVlO2C5.png" }
+        ]
+
+        return { questionKeys, logos };
     },
 
     mounted() {
@@ -59,6 +81,9 @@ export default {
             if (!buttons.length) return;
             if (buttons[0].innerText === 'Continue') {
                 buttons[0].innerText = 'Get my Offer!';
+                buttons[0].onclick = () => {
+                    this.isOnWelcome = false;
+                };
             }
             obs.disconnect();
         });
@@ -83,6 +108,7 @@ export default {
 
     data() {
         return {
+            isOnWelcome: true,
             language: new LanguageModel({
                 // Your language definitions here (optional).
                 // You can leave out this prop if you want to use the default definitions.
