@@ -115,11 +115,11 @@ header.vff-header svg.f-logo {
 .vff ul.f-radios li.f-selected,
 .vff ul.f-radios li:active {
     border-color: var(--vff-main-text-color);
-    background-color: var(--vff-tertiary-text-color);
+    background-color: #e2e8f0;
 }
 
 .vff ul.f-radios li.f-other.f-selected input {
-    color: inherit;
+    color: white;
 }
 
 .vff .f-key{
@@ -332,7 +332,11 @@ header.vff-header svg.f-logo {
 
     /* field-multiplechoice */
     .vff ul.f-radios li.f-selected{
-        color: var(--vff-main-accent-color);
+        color: white !important;
+        background-color: var(--vff-main-accent-color);
+    }
+    .vff ul.f-radios li.f-selected div.f-label-wrap span.f-key{
+        color: white !important;
     }
 
     .vff ul.f-radios li {

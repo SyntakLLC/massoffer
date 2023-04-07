@@ -656,6 +656,8 @@ header.vff-header svg.f-logo {
     user-select: none;
     position: relative;
     overflow: hidden;
+    background-color: white;
+    color: #334155 !important;
 }
 
 .vff ul.f-radios li.f-other input[type="text"] {
